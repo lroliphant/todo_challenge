@@ -1,20 +1,44 @@
-# Todo Challenge
+Todo Challenge
+===================
 
-* Deadline: submit completed pull request by 9am on Monday
-* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
 
-Steps
--------
+## Synopsis
 
-1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan 
-2. Fork this repo, and clone to your local machine
-3. Complete the following challenge:
+Build a Todo list as a mini front-end application, ensuring you have well written, well structured acceptance and unit tests; clear and expressive JavaScript and good HTML5 markup.
 
-## Challenge
 
-![Todo mockup](https://makersacademy.mybalsamiq.com/mockups/2914603.png?key=afabb09aef2901a2732515ae4349c1ec0458294b)
+## Technologies Used
+- JavaScript
+- jQuery ?
+- Angular ?
+- HTML5
+- CSS
+- Jasmine ?
+- Protractor....?
+- Express/Node?
 
-Build a Todo list as a mini front-end application. You don't have to use a database, the front-end is more important - you can use an appropriate data structure stored somewhere in your JavaScript (this time only!)
+
+
+## Job List
+*
+*
+*
+*
+
+
+
+## Still to complete/refactor
+* look into using local storage (in browser?)
+* host on Node* include setup/running instructions
+
+* Deploy the app
+* Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
+* Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
+
+
+
+
+
 
 Here are the core user stories:
 
@@ -48,26 +72,13 @@ I want to be able to clear my completed tasks
 So I never see them again
 ```
 
-As you may imagine, implementing a To-do list is very much a solved problem. However, we are mainly interested in seeing how you approach testing and design. We are looking for:
 
-* well written, well structured acceptance and unit tests
-* clear and expressive JavaScript
-* good HTML5 markup
 
-Don't worry about deployment, and make sure you read the CONTRIBUTING.md when submitting a pull request.
-
-## Extensions
-
-* Deploy the app
-* Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
-* Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
 
 ## CI
 
-Read the `.travis.yml` if any of the steps below don't make sense! 
+Read the `.travis.yml` if any of the steps below don't make sense!
 
 * Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
 * Make sure you have your Protractor config file at `e2e/conf.js`
 * Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
-
-Good luck!
