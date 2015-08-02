@@ -2,6 +2,16 @@ form {
   display: inline-block;
 }
 
+/*
+section.todo {
+  margin: 0 auto!important;
+  width: 45%!important;
+}*/
+.has-error {
+  color: red;
+  box-shadow:
+}
+
 .form-group {
   text-align: center;
   padding-bottom: 25px;

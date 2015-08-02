@@ -9,6 +9,8 @@ toDoTaskList.controller('ToDoListController', [function() {
       return;
     }
     self.toDoList.push( {task: self.newToDo, status: 'active'} );
+    // console.log(self.newToDo);
+    // console.log(self.toDoList);
     self.newToDo = '';
   };
 

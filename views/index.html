@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="ToDoList">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/master.css">
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/components/toDoListController.js"></script>
+    <!--<script src="app/searchFactory.js"></script>-->
+  </head>
+
+  <body ng-controller="ToDoListController as toDoCtrl">
+    <div class="container">
+      <section class="todo form-group">
+        <h1>To Do <small>List</small></h1>
+        <form role="form" name="toDoForm"  ng-submit="toDoCtrl.addToDo()">
+          <input type="text" class="form-control" placeholder="Add task here" name="task" ng-model="toDoCtrl.newToDo" required>
+          <button type="submit" class="btn btn-primary pull-right">Add</button>
+          <!-- <div role="alert">
+            <span class="error" ng-show="toDoForm.task.$error.required">Required!</span>
+          </div> -->
+        </form>
+      </section>
+      <ul class="list-unstyled" id="todo">
+        <li ng-repeat="tasks in toDoCtrl.toDoList">{{ tasks.task }}</li>
+      </ul>
+      <div id="todo-count">Tasks: {{toDoCtrl.toDoList.length}}</div>
+    </div>
+  </body>
+</html>
