@@ -3,6 +3,7 @@ describe('To Do App', function() {
   var taskInput = element(by.model('toDoCtrl.newToDo'));
   var addButton = element(by.className('btn'));
   var completeTask = element(by.model('todo.done'));
+  var deleteTaskBtn= element(by.id('delete-btn'));
 
   beforeEach(function() {
     browser.get('http://localhost:3000');
@@ -54,7 +55,7 @@ describe('To Do App', function() {
     });
 
     it('can delete individual tasks', function () {
-      element(by.id('delete-task')).click();
+      deleteTaskBtn.click();
       expect(element(by.id('todo-count')).getText()).toContain('0');
     });
 

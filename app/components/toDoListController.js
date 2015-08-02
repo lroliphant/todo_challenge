@@ -28,10 +28,15 @@ toDoTaskList.controller('ToDoListController', [function() {
   //   self.updateTotal();
   // };
 
-  self.deleteTask = function(indexOf) {
-    self.toDoList.splice(indexOf, 1);
-  };
+  // self.deleteTask = function(i) {
+  //   self.toDoList.splice(i, 1);
+  // };
 
+
+  self.deleteTask = function(item) {
+    var index = self.toDoList.indexOf(item);
+    self.toDoList.splice(index, 1);
+  };
 
 
 }]);

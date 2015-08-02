@@ -10,7 +10,6 @@
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/app/app.js"></script>
     <script src="/app/components/toDoListController.js"></script>
-    <!--<script src="app/searchFactory.js"></script>-->
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
@@ -25,11 +24,12 @@
       <ul class="list-unstyled" id="tasks">
         <li ng-repeat="todo in toDoCtrl.toDoList track by $index">
           <input type="checkbox" name="checkbox" ng-model="todo.done"/>
-          <span id="todo-status" class="done-{{todo.done}}">{{todo.task}} <a href='#' class='close' aria-hidden='true'>&times;</a></span>
+          <span id="todo-status" class="done-{{todo.done}}">{{todo.task}}</span>
+          <a href='#' class='close' id="delete-btn" aria-hidden='true' ng-click="toDoCtrl.deleteTask(todo)">&times;</a>
         </li>
       </ul>
-      <!-- <div id="todo-count">Tasks: {{toDoCtrl.toDoList.length}}</div> -->
       <div id="todo-count">Tasks: {{toDoCtrl.taskCounter()}}</div>
+      <!-- <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button> -->
     </div>
   </body>
 </html>

@@ -1,12 +1,15 @@
+.container {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 2000px;
+}
+
+
 form {
   display: inline-block;
 }
 
-/*
-section.todo {
-  margin: 0 auto!important;
-  width: 45%!important;
-}*/
+
 .has-error {
   color: red;
   box-shadow:
@@ -19,7 +22,7 @@ section.todo {
 
 #tasks {
   margin: 0 auto;
-  width: 500px;
+  width: 400px;
 }
 
 a.close {
@@ -32,4 +35,9 @@ float: right;
 
 .done-false {
   text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #13756D!important;
+  border-color: #0d5751!important;
 }
