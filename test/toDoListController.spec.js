@@ -19,8 +19,8 @@ describe('ToDoListController', function() {
 
   var fakeTask = [
     {
-      task: 'Walk Basil',
-      status: 'active'
+      'task': 'Walk Basil',
+      'done': false
     }
   ];
 

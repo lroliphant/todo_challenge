@@ -17,16 +17,17 @@
     <div class="container">
       <section class="todo form-group">
         <h1>To Do <small>List</small></h1>
-        <form role="form" name="toDoForm"  ng-submit="toDoCtrl.addToDo()">
+        <form role="form" name="toDoForm">
           <input type="text" class="form-control" placeholder="Add task here" name="task" ng-model="toDoCtrl.newToDo" required>
-          <button type="submit" class="btn btn-primary pull-right">Add</button>
-          <!-- <div role="alert">
-            <span class="error" ng-show="toDoForm.task.$error.required">Required!</span>
-          </div> -->
         </form>
+        <button type="submit" class="btn btn-primary" ng-click="toDoCtrl.addToDo()">Add</button>
       </section>
-      <ul class="list-unstyled" id="todo">
-        <li ng-repeat="tasks in toDoCtrl.toDoList">{{ tasks.task }}</li>
+      <ul class="list-unstyled" id="tasks">
+        <li ng-repeat="todo in toDoCtrl.toDoList track by $index">
+          <!--track by $index - asking ng-repeat keyword to use the array index as the index -->
+          <input type="checkbox" name="checkbox" id=" " ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.task}}</span>
+        </li>
       </ul>
       <div id="todo-count">Tasks: {{toDoCtrl.toDoList.length}}</div>
     </div>

@@ -19,14 +19,14 @@ describe('To Do App', function() {
     });
 
     it('list item contains task contents/text added in input field', function () {
-      expect(element(by.id('todo')).getText()).toContain('Walk Basil active');
+      expect(element(by.id('tasks')).getText()).toContain('Walk Basil');
     });
 
     it('increments task count/number', function () {
       expect(element(by.id('todo-count')).getText()).toContain('1');
     });
 
-    // TEST FOR TASKS BEING ACTIVE OR NOT? HOW...
+    // TEST FOR TASKS being done or not - look out for .done-true class?
 
   });
 

@@ -17,11 +17,19 @@ section.todo {
   padding-bottom: 25px;
 }
 
-#todo {
+#tasks {
   margin: 0 auto;
   width: 500px;
 }
 
 a.close {
 float: right;
+}
+
+.done-true {
+  text-decoration: line-through;
+}
+
+.done-false {
+  text-decoration: none;
 }
