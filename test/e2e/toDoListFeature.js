@@ -18,16 +18,17 @@ describe('To Do App', function() {
       addButton.click();
     });
 
-    it('list item appears as active', function () {
-      expect(element(by.id('todo')).getText()).toContain('Walk Basil');
+    it('list item contains task contents/text added in input field', function () {
+      expect(element(by.id('todo')).getText()).toContain('Walk Basil active');
     });
 
-// TEST FOR TASKS BEING ACTIVE OR NOT? HOW...
-    // it('the total number of tasks is displayed', function () {
-    //   expect(element(by.id('total')).getText()).toEqual('1 Tasks Active');
-    // });
-
+    it('increments task count/number', function () {
+      expect(element(by.id('todo-count')).getText()).toContain('1');
     });
 
+    // TEST FOR TASKS BEING ACTIVE OR NOT? HOW...
 
   });
+
+
+});
