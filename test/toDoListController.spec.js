@@ -36,13 +36,13 @@ describe('ToDoListController', function() {
     });
 
     it('and length of the to do list increases by 1', function () {
-      expect(ctrl.toDoList.length).toEqual(1);
+      expect(ctrl.taskCounter()).toEqual(1);
     });
 
     it('should not add empty to dos to list', function () {
       ctrl.newToDo = '';
       ctrl.addToDo();
-      expect(ctrl.toDoList.length).toEqual(1);
+      expect(ctrl.taskCounter()).toEqual(1);
     });
 
   });

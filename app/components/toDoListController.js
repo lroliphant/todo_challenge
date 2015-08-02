@@ -14,6 +14,10 @@ toDoTaskList.controller('ToDoListController', [function() {
     self.newToDo = '';
   };
 
+  self.taskCounter = function () {
+    return self.toDoList.length;
+  };
+
   // self.isComplete = function() {
   //   if(!self.newToDo || self.newToDo === '') {
   //     return;
