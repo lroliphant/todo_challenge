@@ -18,15 +18,20 @@ toDoTaskList.controller('ToDoListController', [function() {
     return self.toDoList.length;
   };
 
-  // self.isComplete = function() {
-  //   if(!self.newToDo || self.newToDo === '') {
-  //     return;
+  // self.deleteTask = function() {
+  //   for (i = 0; i < self.toDoList.length; i++ ) {
+  //     item = self.toDoList[i];
+  //     if (item.task == key) {
+  //       self.list.splice(i, 1);
+  //     }
   //   }
-  //   self.toDoList.push( {'task': self.newToDo, 'status': 'active'} );
-  //   // console.log(self.newToDo);
-  //   // console.log(self.toDoList);
-  //   self.newToDo = '';
+  //   self.updateTotal();
   // };
+
+  self.deleteTask = function(indexOf) {
+    self.toDoList.splice(indexOf, 1);
+  };
+
 
 
 }]);

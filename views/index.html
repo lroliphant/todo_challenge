@@ -24,9 +24,8 @@
       </section>
       <ul class="list-unstyled" id="tasks">
         <li ng-repeat="todo in toDoCtrl.toDoList track by $index">
-          <!--track by $index - asking ng-repeat keyword to use the array index as the index -->
-          <input type="checkbox" name="checkbox" id=" " ng-model="todo.done"/>
-          <span class="done-{{todo.done}}">{{todo.task}}</span>
+          <input type="checkbox" name="checkbox" ng-model="todo.done"/>
+          <span id="todo-status" class="done-{{todo.done}}">{{todo.task}} <a href='#' class='close' aria-hidden='true'>&times;</a></span>
         </li>
       </ul>
       <!-- <div id="todo-count">Tasks: {{toDoCtrl.toDoList.length}}</div> -->

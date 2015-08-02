@@ -2,6 +2,7 @@ describe('To Do App', function() {
 
   var taskInput = element(by.model('toDoCtrl.newToDo'));
   var addButton = element(by.className('btn'));
+  var completeTask = element(by.model('todo.done'));
 
   beforeEach(function() {
     browser.get('http://localhost:3000');
@@ -11,7 +12,7 @@ describe('To Do App', function() {
     expect(browser.getTitle()).toEqual('To Do List');
   });
 
-  describe('When a task is added', function () {
+  describe('when a task is added', function () {
 
     beforeEach(function () {
       taskInput.sendKeys('Walk Basil');
@@ -26,7 +27,36 @@ describe('To Do App', function() {
       expect(element(by.id('todo-count')).getText()).toContain('1');
     });
 
-    // TEST FOR TASKS being done or not - look out for .done-true class?
+  });
+
+  describe('completing a task', function () {
+
+    beforeEach(function () {
+      taskInput.sendKeys('Walk Basil');
+      addButton.click();
+    });
+
+    it('checkbox should be empty when task is created', function () {
+      expect(element(by.id('todo-status')).getAttribute('class')).toEqual('done-false');
+    });
+
+    it('should mark task as done if checkbox is selected', function () {
+      completeTask.click();     expect(element(by.id('todo-status')).getAttribute('class')).toEqual('done-true');
+    });
+
+  });
+
+  describe('deleting tasks', function () {
+
+    beforeEach(function () {
+      taskInput.sendKeys('Walk Basil');
+      addButton.click();
+    });
+
+    it('can delete individual tasks', function () {
+      element(by.id('delete-task')).click();
+      expect(element(by.id('todo-count')).getText()).toContain('0');
+    });
 
   });
 

@@ -24,7 +24,7 @@ describe('ToDoListController', function() {
     }
   ];
 
-  describe('can add and display to dos', function () {
+  describe('can add and display to dos/tasks', function () {
 
     beforeEach(function() {
       ctrl.newToDo = 'Walk Basil';
@@ -39,10 +39,25 @@ describe('ToDoListController', function() {
       expect(ctrl.taskCounter()).toEqual(1);
     });
 
-    it('should not add empty to dos to list', function () {
+    it('should not add empty to-dos to list', function () {
       ctrl.newToDo = '';
       ctrl.addToDo();
       expect(ctrl.taskCounter()).toEqual(1);
+    });
+
+  });
+
+  describe('deleting to-dos/tasks', function () {
+
+    beforeEach(function() {
+      ctrl.newToDo = 'Walk Basil';
+      ctrl.addToDo();
+    });
+
+    it('removing task decreases task number', function() {
+      expect(ctrl.toDoList).toEqual(fakeTask);
+      ctrl.deleteTask();
+      expect(ctrl.taskCounter()).toEqual(0);
     });
 
   });
