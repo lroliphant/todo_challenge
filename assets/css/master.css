@@ -34,8 +34,9 @@ li.ng-scope {
 #todo-count {
   padding: 30px 0 10px;
   margin: 0 auto;
-  width: 300px;
-  text-align: center
+  width: 450px;
+  text-align: left;
+  font-size: 20px;
 }
 
 a.close {
@@ -50,7 +51,19 @@ float: right;
   text-decoration: none;
 }
 
-.btn-primary {
-  background-color: #13756D!important;
-  border-color: #0d5751!important;
+#add-btn {
+  background-color: #13756D;
+  border-color: #0d5751;
+}
+
+#rm-done-btn {
+  background-color: #777;
+  border-color: #666;
+  float:right;
+}
+
+.light-font {
+  color: #545454;
+  font-size: 14px;
+  color: #777;
 }

@@ -26,5 +26,4 @@ toDoTaskList.controller('ToDoListController', [function() {
     });
   };
 
-
 }]);

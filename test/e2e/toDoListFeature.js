@@ -1,9 +1,9 @@
 describe('To Do App', function() {
 
   var taskInput = element(by.model('toDoCtrl.newToDo'));
-  var addButton = element(by.className('btn'));
+  var addButton = element(by.id('add-btn'));
   var completeTask = element(by.model('todo.done'));
-  var removeAllCompleteBtn = element(by.className('rm-done-btn'));
+  var removeAllCompleteBtn = element(by.id('rm-done-btn'));
   var deleteTaskBtn= element(by.id('delete-btn'));
 
   beforeEach(function() {

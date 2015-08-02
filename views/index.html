@@ -19,7 +19,7 @@
         <h1>To Do <small>List</small></h1>
         <form role="form" name="toDoForm">
           <input type="text" class="form-control" placeholder="Add task here" name="task" ng-model="toDoCtrl.newToDo" required>
-          <button type="submit" class="btn btn-primary" ng-click="toDoCtrl.addToDo()">Add</button>
+          <button type="submit" class="btn btn-primary" id="add-btn" ng-click="toDoCtrl.addToDo()">Add</button>
         </form>
 
       </section>
@@ -31,8 +31,8 @@
         </li>
       </ul>
       <div id="todo-count">
-        Tasks: {{toDoCtrl.taskCounter()}}
-        <button class="rm-done-btn" ng-click="toDoCtrl.removeDoneTasks()">Remove completed</button>
+        Tasks <small class="light-font">{{toDoCtrl.taskCounter()}}</small>
+        <button class="btn btn-primary" id="rm-done-btn" ng-click="toDoCtrl.removeDoneTasks()">Remove completed</button>
       </div>
     </div>
   </body>
