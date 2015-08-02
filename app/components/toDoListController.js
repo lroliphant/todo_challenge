@@ -1,7 +1,6 @@
 toDoTaskList.controller('ToDoListController', [function() {
 
   var self = this;
-
   self.toDoList = [];
 
   self.addToDo = function() {
@@ -9,8 +8,6 @@ toDoTaskList.controller('ToDoListController', [function() {
       return;
     }
     self.toDoList.push( {'task': self.newToDo, 'done': false} );
-    // console.log(self.newToDo.task);
-    // console.log(self.toDoList);
     self.newToDo = '';
   };
 
@@ -18,24 +15,15 @@ toDoTaskList.controller('ToDoListController', [function() {
     return self.toDoList.length;
   };
 
-  // self.deleteTask = function() {
-  //   for (i = 0; i < self.toDoList.length; i++ ) {
-  //     item = self.toDoList[i];
-  //     if (item.task == key) {
-  //       self.list.splice(i, 1);
-  //     }
-  //   }
-  //   self.updateTotal();
-  // };
-
-  // self.deleteTask = function(i) {
-  //   self.toDoList.splice(i, 1);
-  // };
-
-
   self.deleteTask = function(item) {
     var index = self.toDoList.indexOf(item);
     self.toDoList.splice(index, 1);
+  };
+
+  self.removeDoneTasks = function() {
+    self.toDoList = _.filter(self.toDoList, function(todo){
+      return !todo.done;
+    });
   };
 
 

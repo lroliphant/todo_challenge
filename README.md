@@ -9,13 +9,10 @@ Build a Todo list as a mini front-end application, ensuring you have well writte
 
 ## Technologies Used
 - JavaScript
-- jQuery ?
-- Angular ?
-- HTML5
-- CSS
-- Jasmine ?
-- Protractor....?
-- Express/Node?
+- Angular
+- HTML5, CSS
+- Karma, Protractor
+- Node, Express
 
 
 
@@ -28,12 +25,13 @@ Build a Todo list as a mini front-end application, ensuring you have well writte
 
 
 ## Still to complete/refactor
+*
 * look into using local storage (in browser?)
 * host on Node* include setup/running instructions
 
 * Deploy the app
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
-* Make it look purdy (CSS) - try a framework like Bootstrap or Foundation
+* Make it look better - CSS
 
 
 
@@ -73,12 +71,19 @@ So I never see them again
 ```
 
 
+## To Run:
 
+* Clone repo to your machine - git clone https://github.com/lroliphant/todo_challenge
+* cd into directory cd todo_challenge
+* Run: npm install and bower install
+* Run: npm start
+* To run testing suites:
 
-## CI
+**Karma Tests:**
+* karma start test/karma.conf.js
 
-Read the `.travis.yml` if any of the steps below don't make sense!
-
-* Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
-* Make sure you have your Protractor config file at `e2e/conf.js`
-* Make sure `npm start` spins up whatever serves up your app - `http-server`, Sinatra or Node
+**Protractor Tests:**
+* node server.js
+* webdriver-manager update
+* webdriver-manager start
+* protractor test/e2e/conf.js

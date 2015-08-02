@@ -3,6 +3,7 @@ describe('To Do App', function() {
   var taskInput = element(by.model('toDoCtrl.newToDo'));
   var addButton = element(by.className('btn'));
   var completeTask = element(by.model('todo.done'));
+  var removeAllCompleteBtn = element(by.className('rm-done-btn'));
   var deleteTaskBtn= element(by.id('delete-btn'));
 
   beforeEach(function() {
@@ -30,7 +31,7 @@ describe('To Do App', function() {
 
   });
 
-  describe('completing a task', function () {
+  describe('completing tasks', function () {
 
     beforeEach(function () {
       taskInput.sendKeys('Walk Basil');
@@ -43,6 +44,12 @@ describe('To Do App', function() {
 
     it('should mark task as done if checkbox is selected', function () {
       completeTask.click();     expect(element(by.id('todo-status')).getAttribute('class')).toEqual('done-true');
+    });
+
+    it('selecting the remove completed task button removes the completed tasks', function () {
+      completeTask.click();
+      removeAllCompleteBtn.click();
+      expect(element(by.id('todo-count')).getText()).toContain('0');
     });
 
   });

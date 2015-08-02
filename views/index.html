@@ -10,6 +10,7 @@
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/app/app.js"></script>
     <script src="/app/components/toDoListController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   </head>
 
   <body ng-controller="ToDoListController as toDoCtrl">
@@ -18,18 +19,21 @@
         <h1>To Do <small>List</small></h1>
         <form role="form" name="toDoForm">
           <input type="text" class="form-control" placeholder="Add task here" name="task" ng-model="toDoCtrl.newToDo" required>
+          <button type="submit" class="btn btn-primary" ng-click="toDoCtrl.addToDo()">Add</button>
         </form>
-        <button type="submit" class="btn btn-primary" ng-click="toDoCtrl.addToDo()">Add</button>
+
       </section>
       <ul class="list-unstyled" id="tasks">
         <li ng-repeat="todo in toDoCtrl.toDoList track by $index">
           <input type="checkbox" name="checkbox" ng-model="todo.done"/>
           <span id="todo-status" class="done-{{todo.done}}">{{todo.task}}</span>
-          <a href='#' class='close' id="delete-btn" aria-hidden='true' ng-click="toDoCtrl.deleteTask(todo)">&times;</a>
+          <span class='close' id="delete-btn" aria-hidden='true' ng-click="toDoCtrl.deleteTask(todo)">&times;</span>
         </li>
       </ul>
-      <div id="todo-count">Tasks: {{toDoCtrl.taskCounter()}}</div>
-      <!-- <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button> -->
+      <div id="todo-count">
+        Tasks: {{toDoCtrl.taskCounter()}}
+        <button class="rm-done-btn" ng-click="toDoCtrl.removeDoneTasks()">Remove completed</button>
+      </div>
     </div>
   </body>
 </html>
