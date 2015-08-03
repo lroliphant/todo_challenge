@@ -30,10 +30,10 @@ Build a Todo list as a mini front-end application, ensuring you have well writte
 * Edit functionality - so users can edit the existing tasks on the list (rather than deleting and adding again)
 * Add ability to filter tasks by "All", "Active", "Complete"
 * Look into using local storage (in browser?)
-* Deploy the app??
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
 * Make it look better - CSS
 * Improve form validation - add in custom form validation
+* Rewrite removeCompleteTasks function to remove use of underscore JS library for the filter functionality
 
 
 

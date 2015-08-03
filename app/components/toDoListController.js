@@ -20,6 +20,7 @@ toDoTaskList.controller('ToDoListController', [function() {
     self.toDoList.splice(index, 1);
   };
 
+// convert to a function using filter without underscore js library
   self.removeCompleteTasks = function() {
     self.toDoList = _.filter(self.toDoList, function(todo){
       return !todo.completed;
