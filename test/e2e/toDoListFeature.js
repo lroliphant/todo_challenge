@@ -2,7 +2,7 @@ describe('To Do App', function() {
 
   var taskInput = element(by.model('toDoCtrl.newToDo'));
   var addButton = element(by.id('add-btn'));
-  var completeTask = element(by.model('todo.done'));
+  var completeTask = element(by.model('todo.completed'));
   var removeAllCompleteBtn = element(by.id('rm-done-btn'));
   var deleteTaskBtn= element(by.id('delete-btn'));
 
@@ -39,11 +39,11 @@ describe('To Do App', function() {
     });
 
     it('checkbox should be empty when task is created', function () {
-      expect(element(by.id('todo-status')).getAttribute('class')).toEqual('done-false');
+      expect(element(by.id('status')).getAttribute('class')).toEqual('completed-false');
     });
 
-    it('should mark task as done if checkbox is selected', function () {
-      completeTask.click();     expect(element(by.id('todo-status')).getAttribute('class')).toEqual('done-true');
+    it('should mark task as complete if checkbox is selected', function () {
+      completeTask.click();     expect(element(by.id('status')).getAttribute('class')).toEqual('completed-true');
     });
 
     it('selecting the remove completed task button removes the completed tasks', function () {

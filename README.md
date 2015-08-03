@@ -33,6 +33,7 @@ Build a Todo list as a mini front-end application, ensuring you have well writte
 * Deploy the app??
 * Create a persistance layer (e.g. MongoDB), or use LocalStorage or the filesystem through Node
 * Make it look better - CSS
+* Improve form validation - add in custom form validation
 
 
 

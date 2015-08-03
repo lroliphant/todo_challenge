@@ -25,14 +25,14 @@
       </section>
       <ul class="list-unstyled" id="tasks">
         <li ng-repeat="todo in toDoCtrl.toDoList track by $index">
-          <input type="checkbox" name="checkbox" ng-model="todo.done"/>
-          <span id="todo-status" class="done-{{todo.done}}">{{todo.task}}</span>
+          <input type="checkbox" name="checkbox" ng-model="todo.completed"/>
+          <span id="status" class="completed-{{todo.completed}}">{{todo.task}}</span>
           <span class='close' id="delete-btn" aria-hidden='true' ng-click="toDoCtrl.deleteTask(todo)">&times;</span>
         </li>
       </ul>
       <div id="todo-count">
         Tasks <small class="light-font">{{toDoCtrl.taskCounter()}}</small>
-        <button class="btn btn-primary" id="rm-done-btn" ng-click="toDoCtrl.removeDoneTasks()">Remove completed</button>
+        <button class="btn btn-primary" id="rm-done-btn" ng-click="toDoCtrl.removeCompleteTasks()">Remove completed</button>
       </div>
     </div>
   </body>

@@ -20,7 +20,7 @@ describe('ToDoListController', function() {
   var fakeTask = [
     {
       'task': 'Walk Basil',
-      'done': false
+      'completed': false
     }
   ];
 

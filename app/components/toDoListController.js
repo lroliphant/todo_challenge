@@ -7,7 +7,7 @@ toDoTaskList.controller('ToDoListController', [function() {
     if(!self.newToDo || self.newToDo === '') {
       return;
     }
-    self.toDoList.push( {'task': self.newToDo, 'done': false} );
+    self.toDoList.push( {'task': self.newToDo, 'completed': false} );
     self.newToDo = '';
   };
 
@@ -20,9 +20,9 @@ toDoTaskList.controller('ToDoListController', [function() {
     self.toDoList.splice(index, 1);
   };
 
-  self.removeDoneTasks = function() {
+  self.removeCompleteTasks = function() {
     self.toDoList = _.filter(self.toDoList, function(todo){
-      return !todo.done;
+      return !todo.completed;
     });
   };
 
