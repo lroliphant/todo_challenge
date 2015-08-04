@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
     "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
+    "start": "node index.js",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor test/protractor-conf.js",
     "postinstall": "bower cache clean && bower install"
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/lroliphant/todo_challenge#readme",
   "devDependencies": {
+    "bower": "^1.4.1",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.3",
     "karma-chrome-launcher": "^0.2.0",
